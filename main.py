@@ -1,6 +1,6 @@
 # Tennis
 #
-# v-0.0.1
+# v-0.0.2
 #
 # This project is intended for further analysis of the neural network
 #
@@ -14,20 +14,21 @@ def main():
     screen = pygame.display.set_mode((800, 600))
 
     while True:
+
+        backcolor = (10, 34, 140)
+        screen.fill(backcolor)
+        board_draw(screen)
+        pygame.display.update()
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
 
-        backcolor = (10,34,140)
-        screen.fill(backcolor)
-        pygame.display.update()
 
-def board_draw():
-    pass
+def board_draw(screen):  # draw board
+    board_color = (200, 100, 30)
+    pygame.draw.rect(screen, board_color, (30, 50, 20, 80))
 
 
 if __name__ == '__main__':
     main()
-
-
-
