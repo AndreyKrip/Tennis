@@ -22,6 +22,9 @@ def main():
         screen.fill(backcolor)
         pygame.display.update()
 
+def board_draw():
+    pass
+
 
 if __name__ == '__main__':
     main()
