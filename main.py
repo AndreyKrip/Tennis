@@ -7,17 +7,22 @@
 # Author: AndreyKrip
 
 import pygame
+from board import Board
 
 def main():
     pygame.init()
 
     screen = pygame.display.set_mode((800, 600))
 
+    bd1 = Board(screen, 50)
+    bd2 = Board(screen, 730)
+
     while True:
 
         backcolor = (10, 34, 140)
         screen.fill(backcolor)
-        board_draw(screen)
+        bd1.board_draw()
+        bd2.board_draw()
         pygame.display.update()
 
         for event in pygame.event.get():
