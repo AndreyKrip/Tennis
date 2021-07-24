@@ -10,7 +10,7 @@ class Board:
         self.height = 80
         self.sc = screen
         self.x_position = x_pos
-        self.y_position = 240
+        self.y_position = (600/2)-self.height/2
 
     def board_draw(self):
 

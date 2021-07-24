@@ -1,6 +1,6 @@
 # Tennis
 #
-# v-0.0.2
+# v-0.0.4
 #
 # This project is intended for further analysis of the neural network
 #
@@ -8,6 +8,8 @@
 
 import pygame
 from board import Board
+from ball import Ball
+
 
 def main():
     pygame.init()
@@ -16,6 +18,7 @@ def main():
 
     bd1 = Board(screen, 50)
     bd2 = Board(screen, 730)
+    ball = Ball(screen)
 
     while True:
 
@@ -23,6 +26,7 @@ def main():
         screen.fill(backcolor)
         bd1.board_draw()
         bd2.board_draw()
+        ball.ball_draw()
         pygame.display.update()
 
         for event in pygame.event.get():
