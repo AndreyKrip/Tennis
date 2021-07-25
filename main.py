@@ -1,6 +1,6 @@
 # Tennis
 #
-# v-0.0.4
+# v-0.0.5
 #
 # This project is intended for further analysis of the neural network
 #
@@ -13,7 +13,7 @@ from ball import Ball
 
 def main():
     pygame.init()
-
+    clock = pygame.time.Clock()
     screen = pygame.display.set_mode((800, 600))
 
     bd1 = Board(screen, 50)
@@ -22,22 +22,21 @@ def main():
 
     while True:
 
+
         backcolor = (10, 34, 140)
         screen.fill(backcolor)
+
         bd1.board_draw()
         bd2.board_draw()
-        ball.ball_draw()
-        pygame.display.update()
 
+        ball.ball_draw()
+        ball.ball_up(bd1, bd2)
+
+        pygame.display.update()
+        clock.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
-
-
-def board_draw(screen):  # draw board
-    board_color = (200, 100, 30)
-    pygame.draw.rect(screen, board_color, (30, 50, 20, 80))
-
 
 if __name__ == '__main__':
     main()

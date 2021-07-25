@@ -14,7 +14,7 @@ class Board:
 
     def board_draw(self):
 
-        pygame.draw.rect(self.sc, self.color, (self.x_position,
+        self.board = pygame.draw.rect(self.sc, self.color, (self.x_position,
                                                self.y_position,
                                                self.width,
                                                self.height))
