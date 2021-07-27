@@ -19,5 +19,10 @@ class Ball:
         if bd1.board.colliderect(self.ball) or bd2.board.colliderect(self.ball):
             self.move = -self.move
 
+        if self.ball.x == 0:
+            print("Game over!")
+            exit()
+
+
         self.x += float(self.move)
         self.ball.centerx = self.x
