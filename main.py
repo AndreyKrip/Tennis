@@ -22,6 +22,7 @@ def main():
     x = 260.0
     x2 = 260.0
 
+
     while True:
 
         backcolor = (10, 34, 140)
@@ -49,9 +50,9 @@ def main():
                 if event.key == pygame.K_UP:
                     bd1.speed = -5
                 if event.key == pygame.K_w:
-                    bd2.speed = 5
-                if event.key == pygame.K_s:
                     bd2.speed = -5
+                if event.key == pygame.K_s:
+                    bd2.speed = 5
             elif event.type == pygame.KEYUP:
                 bd1.speed = 0
                 bd2.speed = 0
