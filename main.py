@@ -1,6 +1,6 @@
 # Tennis
 #
-# v-0.0.6
+# v-0.0.8
 #
 # This project is intended for further analysis of the neural network
 #
@@ -20,6 +20,7 @@ def main():
     bd2 = Board(screen, 730)
     ball = Ball(screen)
     x = 260.0
+    x2 = 260.0
 
     while True:
 
@@ -28,7 +29,8 @@ def main():
 
         bd1.board_draw(x)
         x = bd1.board_up()
-        bd2.board_draw()
+        bd2.board_draw(x2)
+        x2 = bd2.board_up()
 
 
         ball.ball_draw()
@@ -46,8 +48,13 @@ def main():
                     bd1.speed = 5
                 if event.key == pygame.K_UP:
                     bd1.speed = -5
+                if event.key == pygame.K_w:
+                    bd2.speed = 5
+                if event.key == pygame.K_s:
+                    bd2.speed = -5
             elif event.type == pygame.KEYUP:
                 bd1.speed = 0
+                bd2.speed = 0
 
 
 if __name__ == '__main__':

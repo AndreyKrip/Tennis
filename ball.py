@@ -19,8 +19,12 @@ class Ball:
         if bd1.board.colliderect(self.ball) or bd2.board.colliderect(self.ball):
             self.move = -self.move
 
-        if self.ball.x == 0:
+        if self.ball.x == 0:  # Условия поражения
             print("Game over!")
+            exit()
+
+        if self.ball.x >= 800:  # Условия победы
+            print("Game vin!")
             exit()
 
 
