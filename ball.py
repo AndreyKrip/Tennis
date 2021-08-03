@@ -7,7 +7,7 @@ class Ball:
         self.screen = screen
         self.color = "red"
         self.move_x = 2
-        self.move_y = 2
+        self.move_y = 0
         self.radius = 10
 
         self.x = 400
@@ -19,6 +19,11 @@ class Ball:
 
     def ball_up(self, bd1, bd2):
         if bd1.board.colliderect(self.ball) or bd2.board.colliderect(self.ball):
+            if bd1.speed > 0 or bd2.speed > 0:
+                self.move_y += 1
+            else:
+                self.move_y -= 1
+
             self.move_x = -self.move_x
 
         if self.ball.x == 0:  # Условия поражения
@@ -32,11 +37,8 @@ class Ball:
         if self.ball.y >= 600 or not self.ball.y:
             self.move_y *= -1
 
-
-
         self.x += float(self.move_x)
         self.ball.centerx = self.x
-
 
         self.y += float(self.move_y)
         self.ball.centery = self.y
