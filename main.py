@@ -15,6 +15,7 @@ def main():
     pygame.init()
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((800, 600))
+    screen_rect = screen.get_rect()
 
     bd1 = Board(screen, 50)
     bd2 = Board(screen, 730)
@@ -36,7 +37,7 @@ def main():
 
         ball.ball_draw()
 
-        ball.ball_up(bd1, bd2)
+        ball.ball_up(bd1, bd2, screen_rect)
 
         pygame.display.update()
         clock.tick(60)
